@@ -15,7 +15,7 @@ export default class Queue<T> {
 
     enqueue(item: T): void {
         const node = {value: item} as Node<T>;
-        this.length++;``
+        this.length++;
 
         if (!this.tail) {
             this.tail = this.head = node;
@@ -26,6 +26,7 @@ export default class Queue<T> {
     }
     dequeue(): T | undefined {
         if (!this.head) {
+            this.tail = undefined;
             return undefined;
         }
 
