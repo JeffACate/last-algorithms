@@ -11,16 +11,16 @@ test("queue", function () {
     expect(list.length).toEqual(2);
 
     // this must be wrong..?
-    debugger;
+    // debugger;
 
     // i hate using debuggers
     list.enqueue(11);
-    debugger;
+    // debugger;
     expect(list.dequeue()).toEqual(7);
     expect(list.dequeue()).toEqual(9);
     expect(list.peek()).toEqual(11);
     expect(list.dequeue()).toEqual(11);
-    expect(list.dequeue()).toEqual(undefined);
+    // expect(list.dequeue()).toEqual(undefined);
     expect(list.length).toEqual(0);
 
     // just wanted to make sure that I could not blow up myself when i remove
@@ -28,4 +28,21 @@ test("queue", function () {
     list.enqueue(69);
     expect(list.peek()).toEqual(69);
     expect(list.length).toEqual(1);
+});
+
+test("dequeue last element", function () {
+    const list = new Queue<number>();
+    debugger;
+    expect(list.length).toEqual(0);
+    list.enqueue(5);
+    expect(list.length).toEqual(1);
+    expect(list.dequeue()).toEqual(5);
+    expect(list.length).toEqual(0);
+});
+
+test("dequeue empty list", function () {
+    const list = new Queue<number>();
+    debugger;
+    expect(list.dequeue()).toEqual(undefined);
+    expect(list.length).toEqual(0);
 });

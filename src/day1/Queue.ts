@@ -19,6 +19,7 @@ export default class Queue<T> {
 
         if (!this.tail) {
             this.tail = this.head = node;
+            return;
         }
         
         this.tail.next = node;
@@ -26,11 +27,14 @@ export default class Queue<T> {
     }
     dequeue(): T | undefined {
         if (!this.head) {
-            this.tail = undefined;
             return undefined;
         }
 
         this.length--;
+        if (this.length === 0) {
+            this.tail = undefined;
+        }
+
         const head = this.head;
         this.head = this.head.next;
         return head.value;
