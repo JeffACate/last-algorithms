@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "rootDir": ".",
         "outDir": "dist",
         "allowJs": true,
         "noImplicitAny": true,
@@ -9,10 +10,9 @@
         "esModuleInterop": true,
         "target": "esnext",
         "module": "commonjs",
-        "baseUrl": "src",
         "paths": {
             "@code/*": [
-                "day1/*"
+                "./src/day1/*"
             ]
         }
     },
